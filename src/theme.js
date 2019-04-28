@@ -1,0 +1,7 @@
+export const theme = {
+    fontSizes: [ 12, 14, 16, 18, 20 ],
+    colors: {
+        white: "#fff",
+        orange: "#f90"
+    }
+}
