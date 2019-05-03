@@ -2,8 +2,8 @@ trigger:
 - master
 
 variables:
-  dockerId: my-docker-id
-  imageName: my-image-name
+  dockerId: vicnys
+  imageName: parcel-styled-system
 
 steps:
 - script: |
