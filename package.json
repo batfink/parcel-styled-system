@@ -4,7 +4,8 @@
   "description": "Simple styled system exploration",
   "main": "index.js",
   "scripts": {
-    "start": "parcel index.html"
+    "start": "parcel ./src/index.html",
+    "build": "parcel build ./src/index.html"
   },
   "keywords": [],
   "author": "",
