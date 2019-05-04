@@ -13,5 +13,5 @@ steps:
     docker build -t $(dockerId).azurecr.io/$(imageName) .
     docker login -u $(dockerId) -p $PASSWD $(dockerId).azurecr.io
     docker push $(dockerId).azurecr.io/$(imageName)
-    env:
-      PASSWD: $(dockerPassword)
+  env:
+    PASSWD: $(dockerPassword)
