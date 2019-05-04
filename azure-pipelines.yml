@@ -2,11 +2,16 @@ trigger:
 - master
 
 variables:
-  dockerId: vicnys
-  imageName: parcel-styled-system
+- group: vnysVars
+- name: dockerId
+  value: vicnys
+- name: imageName
+  value: parcel-styled-system  
 
 steps:
 - script: |
     docker build -t $(dockerId).azurecr.io/$(imageName) .
-    echo $(dockerPassword) | docker login -u $(dockerId) --password-stdin $(dockerId).azurecr.io
+    docker login -u $(dockerId) -p $PASSWD $(dockerId).azurecr.io
     docker push $(dockerId).azurecr.io/$(imageName)
+    env:
+      PASSWD: $(dockerPassword)
