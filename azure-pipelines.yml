@@ -6,7 +6,10 @@ variables:
   imageName: parcel-styled-system
 
 steps:
-- script: echo $env:BAZ
+- script: |
+    echo $env:BAZ
+    echo $(foo)
+    echo: $(BAZ)
 #    docker build -t $(dockerId).azurecr.io/$(imageName) .
 #    docker login -u $(dockerId) -p $(pswd) $(dockerId).azurecr.io
 #    docker push $(dockerId).azurecr.io/$(imageName)
