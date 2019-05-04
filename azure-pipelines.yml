@@ -6,9 +6,9 @@ variables:
   imageName: parcel-styled-system
 
 steps:
-- script: docker login -u $(dockerId) -p $(pswd) $(dockerId).azurecr.io
+- script: echo "hi there!"
 #    docker build -t $(dockerId).azurecr.io/$(imageName) .
 #    docker login -u $(dockerId) -p $(pswd) $(dockerId).azurecr.io
 #    docker push $(dockerId).azurecr.io/$(imageName)
   env:
-    pswd: $(dockerPassword)
+    pswd: $(foo)
