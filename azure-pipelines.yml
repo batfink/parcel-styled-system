@@ -1,5 +1,5 @@
-#trigger:
-#- master
+trigger:
+- master
 
 variables:
   dockerId: vicnys
@@ -7,10 +7,6 @@ variables:
 
 steps:
 - script: |
-    echo $env
-    echo $(foo)
-#    docker build -t $(dockerId).azurecr.io/$(imageName) .
-#    docker login -u $(dockerId) -p $(pswd) $(dockerId).azurecr.io
-#    docker push $(dockerId).azurecr.io/$(imageName)
-  env:
-    BAR_BAZ: $(foo)
+    docker build -t $(dockerId).azurecr.io/$(imageName) .
+    docker login -u $(dockerId) -p $(dockerPassword) $(dockerId).azurecr.io
+    docker push $(dockerId).azurecr.io/$(imageName)
